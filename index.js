@@ -11,33 +11,59 @@ const nextButton = document.querySelector('[data-js="button-next"]');
 const pagination = document.querySelector('[data-js="pagination"]');
 
 // States
-const maxPage = 1;
-const page = 1;
-const searchQuery = "";
+let maxPage = 1;
+let page = 1;
+let searchQuery = "";
 
-
-async function fetchData () {
+async function fetchData(page, searchQuery) {
   try {
-       const apiUrl = "https://rickandmortyapi.com/api/character"
-       const response = await fetch(apiUrl); 
-       const data = await response.json();
-       let characters = data.results
-       console.log(characters)
+    const apiUrl = `https://rickandmortyapi.com/api/character/?page=${page}&name=${searchQuery}`
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    let characters = data.results
+    console.log(data)
 
-       characters.forEach(character => {
+    characters.forEach(character => {
+      createCharacterCard(character)
+    });
 
-        const characterName = character.name
-        const characterStatus = character.status
-        const imgSrc = character.image
-        const speciesType = character.type 
-      
-
-        createCharacterCard(characterName, characterStatus, imgSrc, speciesType)
-       });
+    maxPage = data.info.pages;
+    pagination.textContent = `${page} / ${maxPage}`;
   }
-  catch(error) {
-      console.log('error', error)
+  catch (error) {
+    console.log('error', error)
   }
 }
 
-fetchData();
+fetchData(page, searchQuery)
+
+searchBar.addEventListener("submit", (e) => {
+  e.preventDefault();
+  page = 1;
+  searchQuery = e.target.query.value;
+  cardContainer.innerHTML = "";
+  fetchData(page, searchQuery);
+})
+
+
+nextButton.addEventListener("click", () => {
+  if (page == maxPage) {
+    return
+  }
+  else {
+    page++;
+    cardContainer.innerHTML = "";
+    fetchData(page, searchQuery);
+  }
+})
+
+prevButton.addEventListener("click", () => {
+  if (page == 1) {
+    return
+  }
+  else {
+    page--;
+    cardContainer.innerHTML = "";
+    fetchData(page, searchQuery);
+  }
+})
