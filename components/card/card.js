@@ -46,15 +46,21 @@ export function createCharacterCard(character) {
 
     const cardInfoDescriptionType = document.createElement('dd');
     cardInfoDescriptionType.classList.add('card__info-description');
-    cardInfoDescriptionType.innerHTML = character.type
+    if (character.type == '') {
+        cardInfoDescriptionType.innerHTML = "No info";
+    } else {
+        cardInfoDescriptionType.innerHTML = character.type
+    }
 
     const cardInfoTitleOccurences = document.createElement('dt');
     cardInfoTitleOccurences.classList.add('card__info-title');
     cardInfoTitleOccurences.innerHTML = "Occurences"
 
+    const amountOfEpisodes = character.episode.length
+
     const cardInfoDescriptionOccurences = document.createElement('dd');
     cardInfoDescriptionOccurences.classList.add('card__info-description');
-    cardInfoDescriptionOccurences.innerHTML = character.episode.length
+    cardInfoDescriptionOccurences.innerHTML = amountOfEpisodes
 
     cardContainer.append(card);
     card.append(cardImageContainer);
