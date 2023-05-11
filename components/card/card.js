@@ -1,8 +1,6 @@
-const main = document.querySelector('main');
+const cardContainer = document.querySelector('[data-js="card-container"]');
 
 export function createCharacterCard(character) {
-    const cardContainer = document.createElement('ul');
-    cardContainer.classList.add('card-container');
 
     const card = document.createElement('li');
     card.classList.add('card');
@@ -54,13 +52,10 @@ export function createCharacterCard(character) {
     cardInfoTitleOccurences.classList.add('card__info-title');
     cardInfoTitleOccurences.innerHTML = "Occurences"
 
-
     const cardInfoDescriptionOccurences = document.createElement('dd');
     cardInfoDescriptionOccurences.classList.add('card__info-description');
-    cardInfoDescriptionOccurences.innerHTML = character.episodes.length
+    cardInfoDescriptionOccurences.innerHTML = character.episode.length
 
-
-    main.append(cardContainer);
     cardContainer.append(card);
     card.append(cardImageContainer);
     cardImageContainer.append(cardImage);
