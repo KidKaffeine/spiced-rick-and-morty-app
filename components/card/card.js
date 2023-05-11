@@ -1,55 +1,55 @@
 const main = document.querySelector('main');
 
-export function createCharacterCard(characterName, characterStatus, imgSrc, speciesType) {   
+export function createCharacterCard(character) {
     const cardContainer = document.createElement('ul');
     cardContainer.classList.add('card-container');
 
-    const card = document.createElement('li'); 
+    const card = document.createElement('li');
     card.classList.add('card');
-    
+
     const cardImageContainer = document.createElement('div');
     cardImageContainer.classList.add('card__image-container');
 
-    const cardImage = document.createElement('img'); 
+    const cardImage = document.createElement('img');
     cardImage.classList.add('card__image');
-    cardImage.setAttribute("src", imgSrc)
+    cardImage.setAttribute("src", character.image)
 
 
     cardImage.classList.add('card__image');
-    cardImage.setAttribute("src", imgSrc)
+    cardImage.setAttribute("src", character.image)
 
-  
+
     const cardImageGradient = document.createElement('div');
     cardImageGradient.classList.add('card__image-gradient');
 
-    const cardContent = document.createElement('div'); 
+    const cardContent = document.createElement('div');
     cardContent.classList.add('card__content');
-    
+
     const cardTitle = document.createElement('h2');
     cardTitle.classList.add('card__title');
-    cardTitle.innerHTML = characterName
+    cardTitle.innerHTML = character.name
 
-    
+
     const cardInfo = document.createElement('dl');
     cardInfo.classList.add('card__info');
-    
+
     const cardInfoTitleStatus = document.createElement('dt');
     cardInfoTitleStatus.classList.add('card__info-title');
     cardInfoTitleStatus.innerHTML = "Status"
 
     const cardInfoDescriptionStatus = document.createElement('dd');
     cardInfoDescriptionStatus.classList.add('card__info-description');
-    cardInfoDescriptionStatus.innerHTML = characterStatus
+    cardInfoDescriptionStatus.innerHTML = character.status
 
-    
+
     const cardInfoTitleType = document.createElement('dt');
     cardInfoTitleType.classList.add('card__info-title');
     cardInfoTitleType.innerHTML = "Type"
 
     const cardInfoDescriptionType = document.createElement('dd');
     cardInfoDescriptionType.classList.add('card__info-description');
-    cardInfoDescriptionType.innerHTML = speciesType
-    
+    cardInfoDescriptionType.innerHTML = character.type
+
     const cardInfoTitleOccurences = document.createElement('dt');
     cardInfoTitleOccurences.classList.add('card__info-title');
     cardInfoTitleOccurences.innerHTML = "Occurences"
@@ -57,7 +57,7 @@ export function createCharacterCard(characterName, characterStatus, imgSrc, spec
 
     const cardInfoDescriptionOccurences = document.createElement('dd');
     cardInfoDescriptionOccurences.classList.add('card__info-description');
-    cardInfoDescriptionOccurences.innerHTML = ""
+    cardInfoDescriptionOccurences.innerHTML = character.episodes.length
 
 
     main.append(cardContainer);

@@ -16,27 +16,20 @@ const page = 1;
 const searchQuery = "";
 
 
-async function fetchData () {
+async function fetchData() {
   try {
-       const apiUrl = "https://rickandmortyapi.com/api/character"
-       const response = await fetch(apiUrl); 
-       const data = await response.json();
-       let characters = data.results
-       console.log(characters)
+    const apiUrl = "https://rickandmortyapi.com/api/character"
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    let characters = data.results
+    console.log(characters)
 
-       characters.forEach(character => {
-
-        const characterName = character.name
-        const characterStatus = character.status
-        const imgSrc = character.image
-        const speciesType = character.type 
-      
-
-        createCharacterCard(characterName, characterStatus, imgSrc, speciesType)
-       });
+    characters.forEach(character => {
+      createCharacterCard(character)
+    });
   }
-  catch(error) {
-      console.log('error', error)
+  catch (error) {
+    console.log('error', error)
   }
 }
 
