@@ -24,21 +24,19 @@ async function fetchData () {
        let characters = data.results
        console.log(characters)
 
-
        characters.forEach(character => {
+
         const characterName = character.name
-
-         const characterStatus = character.status
-
+        const characterStatus = character.status
         const imgSrc = character.image
-
         const speciesType = character.type 
+      
 
         createCharacterCard(characterName, characterStatus, imgSrc, speciesType)
        });
   }
-  catch {
-      console.log('')
+  catch(error) {
+      console.log('error', error)
   }
 }
 

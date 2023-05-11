@@ -1,6 +1,6 @@
 const main = document.querySelector('main');
 
-export function createCharacterCard(characterName, characterStatus, imgSrc, speciesType) {
+export function createCharacterCard(characterName, characterStatus, imgSrc, speciesType) {   
     const cardContainer = document.createElement('ul');
     cardContainer.classList.add('card-container');
 
@@ -57,7 +57,7 @@ export function createCharacterCard(characterName, characterStatus, imgSrc, spec
 
     const cardInfoDescriptionOccurences = document.createElement('dd');
     cardInfoDescriptionOccurences.classList.add('card__info-description');
-    cardInfoDescriptionOccurences.innerHTML = "API variable";
+    cardInfoDescriptionOccurences.innerHTML = ""
 
 
     main.append(cardContainer);
