@@ -11,7 +11,7 @@ const nextButton = document.querySelector('[data-js="button-next"]');
 const pagination = document.querySelector('[data-js="pagination"]');
 
 // States
-let maxPage = 1;
+let maxPage = 42;
 let page = 2;
 let searchQuery = "";
 
@@ -43,6 +43,17 @@ searchBar.addEventListener('submit', (event) => {
   event.target.elements.input.focus();
 });
 
+
+nextButton.addEventListener("click", () => {
+  if (page == maxPage) {
+    return
+  }
+  else {
+    page++;
+    cardContainer.innerHTML = "";
+    fetchData(page, searchQuery);
+  }
+})
 
 prevButton.addEventListener("click", () => {
   if (page == 1) {
