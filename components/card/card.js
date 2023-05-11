@@ -16,7 +16,7 @@ export function createCharacterCard(characterName, characterStatus, imgSrc, spec
 
 
     cardImage.classList.add('card__image');
-    cardImage.setAttribute("src", "https://rickandmortyapi.com/api/character/avatar/1.jpeg")
+    cardImage.setAttribute("src", imgSrc)
 
   
     const cardImageGradient = document.createElement('div');
@@ -49,13 +49,6 @@ export function createCharacterCard(characterName, characterStatus, imgSrc, spec
     const cardInfoDescriptionType = document.createElement('dd');
     cardInfoDescriptionType.classList.add('card__info-description');
     cardInfoDescriptionType.innerHTML = speciesType
-
-    cardInfoTitleType.classList.add('card__info-title');
-
-    const cardInfoDescriptionType = document.createElement('dd');
-    cardInfoDescriptionType.classList.add('card__info-description');
-    cardInfoDescriptionType.innerHTML = "Alien"
-
     
     const cardInfoTitleOccurences = document.createElement('dt');
     cardInfoTitleOccurences.classList.add('card__info-title');
@@ -64,15 +57,7 @@ export function createCharacterCard(characterName, characterStatus, imgSrc, spec
 
     const cardInfoDescriptionOccurences = document.createElement('dd');
     cardInfoDescriptionOccurences.classList.add('card__info-description');
-    cardInfoDescriptionOccurences.innerHTML = "API variable"
-
-    cardInfoTitleOccurences.classList.add('card__info-title');
-
-    const cardInfoDescriptionOccurences = document.createElement('dd');
-    cardInfoDescriptionOccurences.classList.add('card__info-description');
-    cardInfoDescriptionOccurences.innerHTML = "all of them" 
-
-
+    cardInfoDescriptionOccurences.innerHTML = "API variable";
 
 
     main.append(cardContainer);
