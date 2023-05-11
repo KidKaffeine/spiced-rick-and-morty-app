@@ -15,6 +15,7 @@ const maxPage = 1;
 const page = 1;
 const searchQuery = "";
 
+
 async function fetchData () {
   try {
        const apiUrl = "https://rickandmortyapi.com/api/character"
