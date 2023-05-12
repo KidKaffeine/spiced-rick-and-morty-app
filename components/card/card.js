@@ -1,7 +1,7 @@
 const cardContainer = document.querySelector('[data-js="card-container"]');
 
 export function createCharacterCard(character) {
-
+    //Create
     const card = document.createElement('li');
     card.classList.add('card');
 
@@ -62,6 +62,7 @@ export function createCharacterCard(character) {
     cardInfoDescriptionOccurences.classList.add('card__info-description');
     cardInfoDescriptionOccurences.innerHTML = amountOfEpisodes
 
+    //Append
     cardContainer.append(card);
     card.append(cardImageContainer);
     cardImageContainer.append(cardImage);

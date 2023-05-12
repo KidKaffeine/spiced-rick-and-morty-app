@@ -1,7 +1,5 @@
 const navigation = document.querySelector('[data-js="navigation"]');
 
-
-
 export function createPrevButton(onClick) {
     const buttonPrev = document.createElement("button");
     buttonPrev.classList.add("button");
