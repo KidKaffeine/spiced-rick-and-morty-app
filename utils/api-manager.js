@@ -20,7 +20,7 @@ export async function fetchData(page, searchQuery) {
         navigation.innerHTML = "";
         searchBarContainer.innerHTML = "";
 
-        //Create Components Functions
+        //createComponent Functions
         createSearchBar((e) => {
             e.preventDefault();
             searchQuery = e.target.query.value;
