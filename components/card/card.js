@@ -1,7 +1,7 @@
 const cardContainer = document.querySelector('[data-js="card-container"]');
 
 export function createCharacterCard(character) {
-
+    //Create
     const card = document.createElement('li');
     card.classList.add('card');
 
@@ -11,11 +11,6 @@ export function createCharacterCard(character) {
     const cardImage = document.createElement('img');
     cardImage.classList.add('card__image');
     cardImage.setAttribute("src", character.image)
-
-
-    cardImage.classList.add('card__image');
-    cardImage.setAttribute("src", character.image)
-
 
     const cardImageGradient = document.createElement('div');
     cardImageGradient.classList.add('card__image-gradient');
@@ -27,7 +22,6 @@ export function createCharacterCard(character) {
     cardTitle.classList.add('card__title');
     cardTitle.innerHTML = character.name
 
-
     const cardInfo = document.createElement('dl');
     cardInfo.classList.add('card__info');
 
@@ -38,7 +32,6 @@ export function createCharacterCard(character) {
     const cardInfoDescriptionStatus = document.createElement('dd');
     cardInfoDescriptionStatus.classList.add('card__info-description');
     cardInfoDescriptionStatus.innerHTML = character.status
-
 
     const cardInfoTitleType = document.createElement('dt');
     cardInfoTitleType.classList.add('card__info-title');
@@ -62,6 +55,7 @@ export function createCharacterCard(character) {
     cardInfoDescriptionOccurences.classList.add('card__info-description');
     cardInfoDescriptionOccurences.innerHTML = amountOfEpisodes
 
+    //Append
     cardContainer.append(card);
     card.append(cardImageContainer);
     cardImageContainer.append(cardImage);
@@ -75,7 +69,6 @@ export function createCharacterCard(character) {
     cardInfo.append(cardInfoDescriptionType);
     cardInfo.append(cardInfoTitleOccurences);
     cardInfo.append(cardInfoDescriptionOccurences);
-
 }
 
 
