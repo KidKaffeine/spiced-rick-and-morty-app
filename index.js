@@ -6,8 +6,3 @@ let searchQuery = "";
 
 //FUNCTION CALL
 fetchData(page, searchQuery)
-
-
-
-
-
