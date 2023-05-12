@@ -12,11 +12,6 @@ export function createCharacterCard(character) {
     cardImage.classList.add('card__image');
     cardImage.setAttribute("src", character.image)
 
-
-    cardImage.classList.add('card__image');
-    cardImage.setAttribute("src", character.image)
-
-
     const cardImageGradient = document.createElement('div');
     cardImageGradient.classList.add('card__image-gradient');
 
@@ -26,7 +21,6 @@ export function createCharacterCard(character) {
     const cardTitle = document.createElement('h2');
     cardTitle.classList.add('card__title');
     cardTitle.innerHTML = character.name
-
 
     const cardInfo = document.createElement('dl');
     cardInfo.classList.add('card__info');
@@ -38,7 +32,6 @@ export function createCharacterCard(character) {
     const cardInfoDescriptionStatus = document.createElement('dd');
     cardInfoDescriptionStatus.classList.add('card__info-description');
     cardInfoDescriptionStatus.innerHTML = character.status
-
 
     const cardInfoTitleType = document.createElement('dt');
     cardInfoTitleType.classList.add('card__info-title');
@@ -76,7 +69,6 @@ export function createCharacterCard(character) {
     cardInfo.append(cardInfoDescriptionType);
     cardInfo.append(cardInfoTitleOccurences);
     cardInfo.append(cardInfoDescriptionOccurences);
-
 }
 
 

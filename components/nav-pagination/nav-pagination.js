@@ -8,5 +8,3 @@ export function createPagination(page, maxPage) {
 
     navigation.append(pagination);
 }
-
-/* <span class="navigation__pagination" data-js="pagination">1 / 1</span> */

@@ -7,6 +7,7 @@ export function createPrevButton(onClick) {
     buttonPrev.setAttribute("data-js", "button-prev");
     buttonPrev.innerText = "previous";
     buttonPrev.onclick = onClick;
+
     navigation.append(buttonPrev);
 
 }
@@ -21,7 +22,3 @@ export function createNextButton(onClick) {
 
     navigation.append(buttonNext);
 }
-
-/* <button class="button button--prev" data-js="button-prev">
-previous
-</button> */
